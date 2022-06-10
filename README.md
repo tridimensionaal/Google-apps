@@ -1,6 +1,6 @@
 # Patos
 
-[https://www.kaggle.com/datasets/gauthamp10/google-playstore-apps](Link dataset)
+[Link datasets](https://www.kaggle.com/datasets/gauthamp10/google-playstore-apps)
 
 ```bash
  docker build -t "patos:Dockerfile" .
