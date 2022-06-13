@@ -16,3 +16,4 @@ RUN apt-get update && \
     rm -rf pig-$PIG_VERSION.tar.gz /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 COPY ./dataset/Google-Playstore.csv /dataset/
+COPY ./best_apps.pig /dataset/
