@@ -15,5 +15,5 @@ RUN apt-get update && \
     echo "PATH=$JAVA_HOME/bin:$HADOOP_HOME/bin:$PIG_HOME/bin:$PATH" >> ~/.bashrc && \
     rm -rf pig-$PIG_VERSION.tar.gz /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
-COPY ./dataset/Google-Playstore.csv /dataset/
-COPY ./best_apps.pig /dataset/
+COPY ./dataset/Google-Playstore.csv /proyecto/dataset/Google-Playstore.csv
+COPY ./best_apps.pig /proyecto/best_apps.pig
