@@ -29,47 +29,21 @@ raw = LOAD 'dataset/Google-Playstore.csv' USING org.apache.pig.piggybank.storage
 -- remover header 
 raw_no_header = FILTER raw BY app_name != 'App Name';
 
--- 
-raw_count = FILTER raw_no_header BY rating_count >= 10000 AND rating > 4.4;
+-- filter apps with good califications
+raw_good_apps = FILTER raw_no_header BY rating_count >= 10000 AND rating > 4.5;
 
--- select important fieds
-fields_apps = FOREACH raw_count GENERATE 
-    category, 
-    (
-        CASE
-            WHEN rating > 4.4 AND rating <= 4.6 THEN '(4.4, 4.6]'
-            WHEN rating > 4.6 AND rating <= 4.8 THEN '(4.6, 4.8]'
-            ELSE '(4.8, 5.0]'
-        END
-    ) AS rating, 
-    (
-        CASE 
-            WHEN free == TRUE THEN 'Free'
-            ELSE 'No free'
-        END
-    ) AS free,
-    (
-        CASE 
-            WHEN ad_supported == TRUE THEN 'Ad supported'
-            ELSE 'No ad supported'
-        END
-    ) AS ad_supported,
-    (
-        CASE 
-            WHEN in_app_purchases == TRUE THEN 'In app purchases'
-            ELSE 'No in app purchases'
-        END
-    ) AS in_app_purchases;
+-- filter apps that are free with no ads.
+raw_free_no_ads = FILTER raw_good_apps BY free == TRUE AND ad_supported == FALSE; 
 
--- group apps by fields
-apps_group = GROUP fields_apps BY (category, rating, free, ad_supported, in_app_purchases);
+-- group apps by category
+apps_category_group = GROUP fields_apps BY category;
 
 -- count groups 
-apps_group_count = FOREACH apps_group GENERATE group, COUNT($1) AS count;
+apps_group_count = FOREACH apps_category_group GENERATE group, COUNT($1) AS count;
 
 -- order 
 apps_group_count_desc = ORDER apps_group_count BY count DESC;
 
 -- save data
-STORE apps_group_count_desc INTO 'apps_group.txt' USING org.apache.pig.piggybank.storage.CSVExcelStorage();
+STORE apps_group_count_desc INTO 'apps_group' USING org.apache.pig.piggybank.storage.CSVExcelStorage();
 
