@@ -1,3 +1,5 @@
+-- Script to know the best app free with no ads by category. 
+
 -- read file
 raw = LOAD 'dataset/Google-Playstore.csv' USING org.apache.pig.piggybank.storage.CSVExcelStorage() AS (
     app_name:chararray, 
@@ -58,4 +60,4 @@ category_best_cleaned = FOREACH category_best GENERATE group, count, app_name, r
 apps_group_count_desc = ORDER category_best_cleaned BY count DESC;
 
 -- save data
-STORE apps_group_count_desc INTO 'apps_group' USING org.apache.pig.piggybank.storage.CSVExcelStorage();
+STORE apps_group_count_desc INTO 'free_noAd_AppGroup' USING org.apache.pig.piggybank.storage.CSVExcelStorage();
