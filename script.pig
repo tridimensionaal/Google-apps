@@ -48,6 +48,12 @@ best_for_category = FOREACH (GROUP raw_free_no_ads BY category) {
    GENERATE flatten(limited);
 };
 
+-- join
+category_best = JOIN best_for_category BY category, apps_group_count BY group;
+
+-- select just what we want
+category_best_cleaned = FOREACH category_best GENERATE group, count, app_name, rating;
+
 -- order 
 apps_group_count_desc = ORDER apps_group_count BY count DESC;
 
