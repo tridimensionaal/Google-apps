@@ -42,8 +42,8 @@ apps_category_group = GROUP raw_free_no_ads BY category;
 apps_group_count = FOREACH apps_category_group GENERATE group, COUNT($1) AS count;
 
 -- get the best app foreach category
-best_for_category = FOREACH apps_category_group {
-   ordered = order apps_category_group by rating DESC; 
+best_for_category = FOREACH (GROUP raw_free_no_ads BY category) {
+   ordered = ORDER raw_free_no_ads BY rating DESC; 
    limited = LIMIT ordered 1; 
    GENERATE flatten(limited);
 };
