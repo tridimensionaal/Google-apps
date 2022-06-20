@@ -55,4 +55,3 @@ apps_group_count_desc = ORDER apps_group_count BY count DESC;
 
 -- save data
 STORE apps_group_count_desc INTO 'apps_group' USING org.apache.pig.piggybank.storage.CSVExcelStorage();
-
