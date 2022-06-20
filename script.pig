@@ -36,7 +36,7 @@ raw_good_apps = FILTER raw_no_header BY rating_count >= 10000 AND rating > 4.5;
 raw_free_no_ads = FILTER raw_good_apps BY free == TRUE AND ad_supported == FALSE; 
 
 -- group apps by category
-apps_category_group = GROUP fields_apps BY category;
+apps_category_group = GROUP raw_free_no_ads BY category;
 
 -- count groups 
 apps_group_count = FOREACH apps_category_group GENERATE group, COUNT($1) AS count;
