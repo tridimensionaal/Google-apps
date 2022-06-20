@@ -39,7 +39,7 @@ raw_free_no_ads = FILTER raw_good_apps BY free == TRUE AND ad_supported == FALSE
 apps_category_group = GROUP raw_free_no_ads BY category;
 
 -- count groups 
-apps_group_count = FOREACH apps_category_group GENERATE group, COUNT($1);
+apps_group_count = FOREACH apps_category_group GENERATE group, COUNT($1) AS count;
 
 -- get the best app foreach category
 --best_for_category = FOREACH apps_category_group {
