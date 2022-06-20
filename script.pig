@@ -48,10 +48,8 @@ best_for_category = FOREACH (GROUP raw_free_no_ads BY category) {
    GENERATE flatten(limited);
 };
 
---DUMP best_for_category;
-
 -- order 
 apps_group_count_desc = ORDER apps_group_count BY count DESC;
 
 -- save data
-STORE apps_group_count_desc INTO 'apps_group' USING org.apache.pig.piggybank.storage.CSVExcelStorage();
+STORE best_for_category INTO 'apps_group' USING org.apache.pig.piggybank.storage.CSVExcelStorage();
