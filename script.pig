@@ -55,7 +55,7 @@ category_best = JOIN best_for_category BY category, apps_group_count BY group;
 category_best_cleaned = FOREACH category_best GENERATE group, count, app_name, rating;
 
 -- order 
-apps_group_count_desc = ORDER apps_group_count BY count DESC;
+apps_group_count_desc = ORDER category_best_cleaned BY count DESC;
 
 -- save data
-STORE best_for_category INTO 'apps_group' USING org.apache.pig.piggybank.storage.CSVExcelStorage();
+STORE apps_group_count_desc INTO 'apps_group' USING org.apache.pig.piggybank.storage.CSVExcelStorage();
