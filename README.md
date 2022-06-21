@@ -70,8 +70,9 @@
 |Music & Audio,(4.4, 4.6],Free,Ad supported,No in app purchases|153 |
 
 - **Developers**: The script generate results for various groups. For example, in particular the top 10 developers for free apps in the category `Tools` is the following:
+
 | Developers | Count |
-| ---------- | ------| 
+|----------|------| 
 |Crone|8|
 |Alef Network|7 |
 |Desh Keyboards|7 |
