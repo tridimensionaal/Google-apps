@@ -18,4 +18,4 @@ RUN apt-get update && \
 COPY ./dataset/Google-Playstore.csv /proyecto/dataset/Google-Playstore.csv
 COPY ./scripts/best_group_apps.pig /proyecto/best_group_apps.pig
 COPY ./scripts/developers.pig /proyecto/developers.pig
-COPY ./scripts/script.pig /proyecto/script.pig
+COPY ./scripts/best_apps.pig /proyecto/best_apps.pig

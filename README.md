@@ -10,16 +10,16 @@
   - [Results](#Results)
   
 ### Description
-  - **Why some playstore apps are better than other** is a project that tries to understand, through data analysis, why some playstore apps are better than others.
+  - **Why some playstore apps are better than other** is a project that tries to understand, through data analysis, the different groups of *good apps*, their characteristics and why some playstore apps are better than others.
 
 ### Objectives
-- First objective
-- Second objective
-- Third objective
+- Know the different groups of apps (groups based on shared characteristics such as category, price, etc.)
+- Know more particular characteristics of different groups of apps. For example, the main developers involved in the development of the apps.
+- Know particular cases of good apps.
 
 ### How to run the project
 - #### Dataset 
-  - First, you need to have the dataset in ` directory. In the following [link](https://www.kaggle.com/datasets/gauthamp10/google-playstore-apps) you can download the dataset.
+  - First, you need to put the data in a directory called `dataset`. In the following [link](https://www.kaggle.com/datasets/gauthamp10/google-playstore-apps) you can download the dataset.
 
 - #### Docker
   - The project uses Pig Latin, so if you don't want to install PigLatin on your PC, you can create a docker container with everything you need to run the project.
@@ -40,14 +40,14 @@
       ```
 
   - **Developers**
-    - Description: The `Developers` script filters the apss, groups the apps by different categories and counts how many developers developed apps for each group.
+    - Description: The `developers` script filters the apss, groups the apps by different categories and counts how many developers have developed apps for each group.
     - How to use: 
       ```bash
         pig developers.pig
       ```
 
   - **Best apps**
-    - Description: 
+    - Description: The `best apps` script selects the best free and ad-free app by category.
     - How to use: 
       ```bash
         pig best_apps.pig
@@ -69,7 +69,7 @@
 |Arcade,(4.4, 4.6],Free,Ad supported,In app purchases|163 |
 |Music & Audio,(4.4, 4.6],Free,Ad supported,No in app purchases|153 |
 
-- **Developers**: The script generate results for various groups. For example, in particular the top 10 developers for free apps in the category `Tools` is the following:
+- **Developers**: The script generates results for various groups. For example, in particular the top 10 developers for free apps in the category `Tools` is the following:
 
 | Developers | Count |
 |----------|------| 
@@ -84,6 +84,22 @@
 |Dourado Developer|4 |
 |Free MCPE Addon|4 |
 
-- Best group apps:
+- **Best apps*: The free and add-free apps for the top 10 categories (categories with most apps). 
+
+| Category | Count | App | Rating|
+|----------|------|------|-------|
+| Finance|259|Мои налоги: личный кабинет. Оплата налогов по ИНН | 4.9 | 
+| Education|211|"Жәннат Фирдаус - Намаз| Құран оқуды үйрену" | 5.0 |
+| Shopping|196|InPost Mobile | 4.9 |
+| Books & Reference|116|Babel Novel - Fantastic Books & Webnovel Reading | 5.0 |
+| Health & Fitness|106|"Insight Timer - Meditation| Sleep| Music" | 4.9 |
+| Tools|104|"Tasbeeh Counter: zikr| tasbih| zikirmatik" | 4.9 |
+| Lifestyle|102|In Love while Parenting - Couples App |4.9 | 
+| Travel & Local|85|"Tutu.ru - flights| Russian railway and bus tickets" | 4.9 |
+| Productivity|79|GenshinDb | 4.9 |
+| Business|73|Samsung Elite | 4.9 |
+
+
+
 
 
