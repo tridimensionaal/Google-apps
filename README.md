@@ -39,7 +39,7 @@
         pig best_group_apps.pig
       ```
 
-  - **Developers **
+  - **Developers**
     - Description: The `Developers` script filters the apss, groups the apps by different categories and counts how many developers developed apps for each group.
     - How to use: 
       ```bash
