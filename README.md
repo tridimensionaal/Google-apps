@@ -1,15 +1,3 @@
-# Patos
-
-[Link datasets](https://www.kaggle.com/datasets/gauthamp10/google-playstore-apps)
-
-```bash
- docker build -t "patos:Dockerfile" .
-```
-
-```bash
- docker run -it "patos:Dockerfile"
-```
-
 # Why some playstore apps are better than other 
 ---
 ## Contents:
@@ -31,7 +19,7 @@
 
 ### How to run the project
 - #### Dataset 
-  - First, you need to have the dataset in the `dataset` directory. In the following [link](https://www.kaggle.com/datasets/gauthamp10/google-playstore-apps) you can download the dataset.
+  - First, you need to have the dataset in ` directory. In the following [link](https://www.kaggle.com/datasets/gauthamp10/google-playstore-apps) you can download the dataset.
 
 - #### Docker
   - The project uses Pig Latin, so if you don't want to install PigLatin on your PC, you can create a docker container with everything you need to run the project.
@@ -66,5 +54,21 @@
       ```
 
 ### Results 
+- Best group apps:
+
+| Group apss                                  | Count |
+|---------------------------------------------|-----------------------------|
+|(Puzzle,(4.4, 4.6],Free,Ad supported,In app purchases)| 318 |
+|Tools,(4.4, 4.6],Free,Ad supported,No in app purchases|290 | 
+|Finance,(4.4, 4.6],Free,No ad supported,No in app purchases|240 |
+|Tools,(4.4, 4.6],Free,Ad supported,In app purchases|237 | 
+|Entertainment,(4.4, 4.6],Free,Ad supported,No in app purchases|191 |
+|Casual,(4.4, 4.6],Free,Ad supported,In app purchases|182 | 
+|Simulation,(4.4, 4.6],Free,Ad supported,In app purchases|180 |
+|Personalization,(4.4, 4.6],Free,Ad supported,No in app purchases|166 |
+|Arcade,(4.4, 4.6],Free,Ad supported,In app purchases|163 |
+|Music & Audio,(4.4, 4.6],Free,Ad supported,No in app purchases|153 |
+- Best group apps:
+- Best group apps:
 
 
