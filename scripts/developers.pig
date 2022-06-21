@@ -26,7 +26,13 @@ raw = LOAD 'dataset/Google-Playstore.csv' USING org.apache.pig.piggybank.storage
 	scraped_time:chararray
     );
 
-devs_group = group raw by (developer_id, free, category);
+-- remover header 
+raw_no_header = FILTER raw BY app_name != 'App Name';
+
+-- 
+raw_count = FILTER raw_no_header BY rating_count >= 10000 AND rating > 4.4;
+
+devs_group = group raw_count by (developer_id, free, category);
 
 devs_group_count = foreach devs_group generate group, COUNT($1) as count;
 
@@ -41,6 +47,20 @@ split education_devs into edu_devs_free if $0.free==TRUE, edu_devs_paid if $0.fr
 split social_devs into social_devs_free if $0.free==TRUE, social_devs_paid if $0.free==FALSE;
 split communication_devs into com_devs_free if $0.free==TRUE, com_devs_paid if $0.free==FALSE;
 split music_devs into music_devs_free if $0.free==TRUE, music_devs_paid if $0.free==FALSE;
+
+tools_devs_free = foreach tools_devs_free generate $0.developer_id, count;
+tools_devs_paid = foreach tools_devs_paid generate $0.developer_id, count;
+edu_devs_free = foreach edu_devs_free generate $0.developer_id, count;
+edu_devs_paid = foreach edu_devs_paid generate $0.developer_id, count;
+
+social_devs_free = foreach social_devs_free generate $0.developer_id, count;
+social_devs_paid = foreach social_devs_paid generate $0.developer_id, count;
+
+com_devs_free = foreach com_devs_free generate $0.developer_id, count;
+com_devs_paid = foreach com_devs_paid generate $0.developer_id, count;
+
+music_devs_free = foreach music_devs_free generate $0.developer_id, count;
+music_devs_paid = foreach music_devs_paid generate $0.developer_id, count;
 
 tools_devs_free = order tools_devs_free by count desc;
 tools_devs_paid = order tools_devs_paid by count desc;

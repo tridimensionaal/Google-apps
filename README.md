@@ -33,17 +33,17 @@
 
 - #### Scripts
   - **Best group apps**
-    - Description: The `best group apps` script groups the apps by different categories and counts how many apps exist for each group.
+    - Description: The `best group apps` script filter the apps, groups the apps by different categories and counts how many apps exist for each group.
     - How to use: 
       ```bash
         pig best_group_apps.pig
       ```
 
-  - **Best apps**
-    - Description: 
+  - **Developers **
+    - Description: The `Developers` script filters the apss, groups the apps by different categories and counts how many developers developed apps for each group.
     - How to use: 
       ```bash
-        pig best_apps.pig
+        pig developers.pig
       ```
 
   - **Best apps**
@@ -54,7 +54,7 @@
       ```
 
 ### Results 
-- Best group apps:
+- **Best group apps**: The top 10 groups of apps are the following.
 
 | Group apss                                  | Count |
 |---------------------------------------------|-----------------------------|
@@ -68,7 +68,21 @@
 |Personalization,(4.4, 4.6],Free,Ad supported,No in app purchases|166 |
 |Arcade,(4.4, 4.6],Free,Ad supported,In app purchases|163 |
 |Music & Audio,(4.4, 4.6],Free,Ad supported,No in app purchases|153 |
-- Best group apps:
+
+- **Developers**: The script generate results for various groups. For example, in particular the top 10 developers for free apps in the category `Tools` is the following:
+| Developers | Count |
+| ---------- | ------| 
+|Crone|8|
+|Alef Network|7 |
+|Desh Keyboards|7 |
+|Pony Mobile|5 |
+|Google LLC|5 |
+|Lite Tools Studio|4 |
+|InShot Inc.|4 |
+|TunnelGuru|4 |
+|Dourado Developer|4 |
+|Free MCPE Addon|4 |
+
 - Best group apps:
 
 
