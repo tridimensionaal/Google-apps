@@ -89,17 +89,12 @@
 | Category | Count | App | Rating|
 |----------|------|------|-------|
 | Finance|259|Мои налоги: личный кабинет. Оплата налогов по ИНН | 4.9 | 
-| Education|211|"Жәннат Фирдаус - Намаз| Құран оқуды үйрену" | 5.0 |
+| Education|211|"Жәннат Фирдаус - Намаз Құран оқуды үйрену" | 5.0 |
 | Shopping|196|InPost Mobile | 4.9 |
 | Books & Reference|116|Babel Novel - Fantastic Books & Webnovel Reading | 5.0 |
-| Health & Fitness|106|"Insight Timer - Meditation| Sleep| Music" | 4.9 |
-| Tools|104|"Tasbeeh Counter: zikr| tasbih| zikirmatik" | 4.9 |
+| Health & Fitness|106|"Insight Timer - Meditation, Sleep, Music" | 4.9 |
+| Tools|104|"Tasbeeh Counter: zikr, tasbih, zikirmatik" | 4.9 |
 | Lifestyle|102|In Love while Parenting - Couples App |4.9 | 
-| Travel & Local|85|"Tutu.ru - flights| Russian railway and bus tickets" | 4.9 |
+| Travel & Local|85|"Tutu.ru - flights, Russian railway and bus tickets" | 4.9 |
 | Productivity|79|GenshinDb | 4.9 |
 | Business|73|Samsung Elite | 4.9 |
-
-
-
-
-
